@@ -12,7 +12,7 @@
         width: 28px;
         height: 3px;
         margin: 0 0 5px 0;
-        background: #ffffff;
+        background: set-warna-teks($warna-utama);
         @include nimbulOut;
     }
 
@@ -113,11 +113,11 @@
         text-transform: uppercase;
         padding: 1rem 0;
         font-weight: 300;
-        color: #ffffff;
+        color: set-warna-teks($warna-utama);
         text-decoration: none;
         @include nimbulOut;
 
-        &.hover {
+        &:hover {
             color: $warna-kedua;
         }
     }

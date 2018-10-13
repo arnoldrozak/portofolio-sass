@@ -8,7 +8,7 @@
 body {
   @include latar;
   background: $warna-utama;
-  color: #fff;
+  color: set-warna-teks($warna-utama);
   height: 100%;
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -49,7 +49,8 @@ header {
 
 main {
   padding: 4rem;
-  height: 100%;
+  //height: 100%;
+  min-height: calc(100vh - 60px);
 
   .icons {
     margin-top: 1rem;
@@ -71,3 +72,92 @@ main {
     }
   }
 }
+
+.info-tentang {
+  display: grid;
+  grid-gap: 30px;
+  grid-template-areas: 
+  'bioimg bio bio'
+  'edu1 edu2 edu3';
+  grid-template-columns: repeat(3, 1fr);
+
+  .bio-img {
+    grid-area: bioimg;
+    margin: auto;
+    border-radius: 50%;
+    border: $warna-kedua 3px solid;
+  }
+  
+  .bio {
+    grid-area: bio;
+    font-size: 1.5rem;
+  }
+  
+  .edu-1 {
+    grid-area: edu1;
+  }
+  .edu-2 {
+    grid-area: edu2;
+  }
+  .edu-3 {
+    grid-area: edu3;
+  }
+  
+  .pendidikan {
+    background: lighten($warna-utama,5);
+    padding: 0.5rem;
+    border-bottom: $warna-kedua 5px solid;
+  }
+}
+
+// Pengalaman (Projek)
+.projek {
+  display: grid;
+  grid-gap: 0.7rem;
+  grid-template-columns: repeat(3, 1fr);
+
+  img {
+    width: 100%;
+    border: 3px #ffffff solid;
+
+    &:hover {
+      opacity: 0.5;
+      border-color: $warna-kedua;
+      @include nimbulOut;
+    }
+  }
+}
+
+// Button
+.btn {
+  display: block;
+  padding: 0.5rem 1rem;
+  border: 0;
+  margin-bottom: 0.3rem;
+  &:hover {
+    background: $warna-kedua;
+    color: set-warna-teks($warna-kedua);
+  }
+}
+
+.btn-light {
+  @extend .btn;
+  background: lighten($warna-utama, 50);
+  color: #333333;
+}
+
+.btn-dark {
+  @extend .btn;
+  background: darken($warna-utama, 50);
+  color: #ffffff;
+}
+
+#main-footer {
+  text-align: center;
+  padding: 1rem;
+  background: darken($warna-utama, 10);
+  color: set-warna-teks($warna-utama);
+  height: 60px;
+}
+
+@import 'mobile';

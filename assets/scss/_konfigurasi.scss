@@ -1,5 +1,5 @@
-$warna-utama: #444;
-$warna-kedua: #eece1a;
+$warna-utama: #444444;
+$warna-kedua: #1ab2ee;
 $tampil-gbr-home: true;
 $gbr-home: url(../img/gambar-latar.jpg);
 $latar-img-opacity: 0.9;
@@ -26,5 +26,36 @@ $latar-img-opacity: 0.9;
         background: rgba($warna-utama, $latar-img-opacity);
       }
     }
+  }
+}
+
+// Set Warna Teks
+@function set-warna-teks($warna) {
+  @if (lightness($warna) > 40) {
+    @return #000000;
+  } @else {
+    @return #ffffff;
+  }
+}
+
+// Media Query
+@mixin mediaSm {
+  @media screen and (max-width: 500px) {
+    @content;
+  }
+}
+@mixin mediaMd {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
+}
+@mixin mediaLg {
+  @media screen and (min-width: 769px) and (max-width: 1170px) {
+    @content;
+  }
+}
+@mixin mediaXl {
+  @media screen and (min-width: 1171px) {
+    @content;
   }
 }
