@@ -1,0 +1,30 @@
+$warna-utama: #444;
+$warna-kedua: #eece1a;
+$tampil-gbr-home: true;
+$gbr-home: url(../img/gambar-latar.jpg);
+$latar-img-opacity: 0.9;
+
+@mixin nimbulOut {
+  transition: all 0.5s ease-out;
+}
+
+@mixin latar {
+  @if $tampil-gbr-home {
+    &#bg-img {
+      background: $gbr-home;
+      background-attachment: fixed;
+      background-size: cover;
+
+      &:after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        background: rgba($warna-utama, $latar-img-opacity);
+      }
+    }
+  }
+}
