@@ -193,6 +193,25 @@ main {
       border-color: #1ab2ee;
       transition: all 0.5s ease-out; }
 
+.hubungi {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin-top: 1rem; }
+  .hubungi div {
+    font-size: 2rem;
+    border: 3px #ffffff solid;
+    padding: 1.5rem 2.5rem;
+    margin-bottom: 3rem;
+    transition: all 0.5s ease-out; }
+    .hubungi div:hover {
+      padding: 0.5rem 1.5rem;
+      background: #1ab2ee;
+      color: #000000; }
+      .hubungi div:hover span {
+        color: #000000; }
+
 .btn, .btn-light, .btn-dark {
   display: block;
   padding: 0.5rem 1rem;
@@ -248,7 +267,7 @@ main {
     height: 25vh;
     transform: translate3d(100%, 0, 0); }
     .menu-branding .potret {
-      background: url(../img/arnold.jpg);
+      background: url(../img/arnold-sm.jpg);
       width: 120px;
       height: 120px; }
   .info-tentang {
